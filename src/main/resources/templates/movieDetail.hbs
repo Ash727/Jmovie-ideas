@@ -1,0 +1,32 @@
+{{#partial "content"}}
+    <h1> {{  selectedMovie.title }} </h1>
+        <!--Handle bars: Runs this as a foreach loop-->
+        <!--Its also aware of title within the scope of movie idea as getTitle but it has to be lower case -->
+
+    <h3>Voters</h3>
+<!--All Getters Must be lower CASE Before yusing them in model -->
+    <ul>
+
+    {{#each selectedMovie.voters }}
+
+        {{ this }}
+    {{/each }}
+
+    </ul>
+        <form action="/ideas/{{ selectedMovie.slug }}/vote" METHOD="post">
+
+      <h3>Voters: {{ selectedMovie.voteCount }} |</a> <button>Vote</button> </h3>
+   <textbox>
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+       Amet consequuntur odit omnis quaerat sit veniam voluptatum.
+       Amet deserunt, eaque et iste molestias non numquam odio,
+       odit praesentium ratione, recusandae unde.
+   </textbox>
+
+        </form>
+
+        </li>
+
+
+{{/partial}}
+{{>base.hbs}}

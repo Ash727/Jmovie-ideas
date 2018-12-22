@@ -1,0 +1,21 @@
+{{#partial "content"}}
+
+{{#if ursername_Cookie}}
+    <h1>Welecome {{ursername_Cookie}}! </h1>
+    <p><a href="/ideas">View all movie Ideas </a> </p>
+{{ else }}
+    <h1>Welcome Scripters !</h1>
+{{/if}}
+
+
+<form method="post" action="/sign-in">
+    <label >Name</label>
+    <input type="text" placeholder="What's Your name ?  " name="username"/>
+    <!--<input type="submit" text="Submit"/>-->
+    <button> Sign in</button>
+
+</form>
+{{/partial}}
+
+<!--this connects it to the base it includes it to the base  -->
+{{> base.hbs}}

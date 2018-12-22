@@ -1,0 +1,25 @@
+{{#partial "content"}}
+   <h1>Current Ideas </h1>
+    <ul>
+        <!--Handle bars: Runs this as a foreach loop-->
+        <!--Its also aware of title within the scope of movie idea-->
+        <!--Notice below that the ideas have a method of voteCount but but method was getvoteCount-->
+        {{#each ideas}}
+        <li>
+            <form action="/ideas/{{ slug }}/vote" METHOD="post">
+
+                Title: <a href="/ideas/{{ slug }}">{{title }} </a>| Voters: {{ voteCount }} | <button>Vote</button>
+            </form>
+
+
+        </li>
+        {{/each}}
+    </ul>
+
+   <form method="post" action="/ideas">
+       <input type="text" name="movieTitle" placeholder="What's Your movie Idea"/>
+       <input type="submit" title="suggest!">
+   </form>
+
+{{/partial}}
+{{>base.hbs}}
